@@ -1,20 +1,16 @@
 #include <stdio.h>
+#include <string.h>
 
 int main(void) {
-    int i, wc = 0;
-    char ch[1000000];
+    int wc = 0;
+    char ch[1000001];
 
-    scanf("%s", ch);
-    if (ch[0] == ' ')
-        i = 1;
-    else
-        i = 0;
+    scanf("%[^\n]", ch);
+    char *ptr = strtok(ch, " ");
 
-    while (ch[i + 1] != 0) {
-        if (ch[i] == ' ') {
-            ++ wc;
-        }
-        ++ i;
+    while (ptr != 0) {
+        wc ++;
+        ptr = strtok(NULL, " ");
     }
-    printf("%d", wc);
+    printf("%d\n", wc);
 }
