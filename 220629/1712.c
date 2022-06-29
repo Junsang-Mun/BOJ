@@ -8,7 +8,7 @@ int main(void) {
     totalCost = 0;
     totalSales = 0;
     scanf("%d %d %d", &staticCost, &variableCost, &price);
-    if (staticCost - variableCost <= 0) {
+    if (variableCost >= price) {
         quantity = -1;
     } else {
         do {
@@ -17,5 +17,5 @@ int main(void) {
             quantity ++;
         } while (totalCost > totalSales);
     } 
-    printf("%ld", quantity);
+    printf("%d", quantity);
 }
