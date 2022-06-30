@@ -11,6 +11,6 @@ int getFibonacci(int f) {
 int main(void) {
     int number;
 
-    scanf("%d", number);
+    scanf("%d", &number);
     printf("%d %d", getFibonacci(number), number - 2);
 }
