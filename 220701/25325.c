@@ -22,7 +22,7 @@ int main(void) {
 
     scanf("%d", &numberOfStudents);
     vote STUDENTS[101];
-    vote VOTED[101];
+    vote VOTED[10001];
     vote tmp;
 
     for (int i = 0; i <= numberOfStudents; i ++) {
@@ -40,7 +40,7 @@ int main(void) {
             }
         }
     }
-    while(voted_ < j) {
+    while(students_ < numberOfStudents) {
         if (f_strcmp(VOTED[voted_].name, STUDENTS[students_].name) == 0) {
             called ++;
         } else {
