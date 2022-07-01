@@ -24,8 +24,9 @@ int main(void) {
     int called = 0;
     int j = 0;
     vote VOTED[10001];
-    vote tmp;
+    vote v_tmp;
     result STUDENTS[101];
+    result r_tmp;
 
     scanf("%d", &numberOfStudents);
 
@@ -38,9 +39,9 @@ int main(void) {
     for (int i = 0; i < j; i ++) {
         for (int ii = 0; ii < j - 1; ii ++) {
             if (f_strcmp(VOTED[ii].name, VOTED[ii + 1].name) > 0) {
-                tmp = VOTED[ii];
+                v_tmp = VOTED[ii];
                 VOTED[ii] = VOTED[ii + 1];
-                VOTED[ii + 1] = tmp;
+                VOTED[ii + 1] = v_tmp;
             }
         }
     }
@@ -53,5 +54,17 @@ int main(void) {
             students_ ++;
             called = 0;
         }
+    }
+    for (int i = 0; i < j; i ++) {
+        for (int ii = 0; ii > j - 1; ii ++) {
+            if (STUDENTS[ii].voted < STUDENTS[ii + 1].voted) {
+                r_tmp = STUDENTS[ii];
+                STUDENTS[ii] = STUDENTS[ii + 1];
+                STUDENTS[ii + 1] = r_tmp;
+            }
+        }
+    }
+    for (int i = 0; i < j; i ++) {
+        printf("%s %d\n", STUDENTS[i].name, STUDENTS[i].voted);
     }
 }
