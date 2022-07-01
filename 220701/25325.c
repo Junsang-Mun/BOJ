@@ -15,35 +15,39 @@ int f_strcmp(char *str1, char *str2)
 
 int main(void) {
     int numberOfStudents;
-    int order = 0;
-    int called = 1;
+    int students_ = 0;
+    int voted_ = 0;
+    int called = 0;
     int j = 0;
 
     scanf("%d", &numberOfStudents);
-    vote STUDENTS[numberOfStudents];
+    vote STUDENTS[101];
+    vote VOTED[101];
     vote tmp;
-    for (int i = 1; i <= numberOfStudents; i ++) {
+
+    for (int i = 0; i <= numberOfStudents; i ++) {
         scanf("%s", STUDENTS[i].name);
     }
-    while (scanf("%s", STUDENTS[j].name) != EOF) {
+    while (scanf("%s", VOTED[j].name) != EOF) {
         j ++;
     }
     for (int ii = 1; ii <= j; ii ++) {
         for (int iii = ii + 1; iii < j; iii ++) {
-            if (f_strcmp(STUDENTS[ii].name, STUDENTS[iii].name) > 0) {
-                tmp = STUDENTS[ii];
-                STUDENTS[ii] = STUDENTS[iii];
-                STUDENTS[iii] = tmp;
+            if (f_strcmp(VOTED[ii].name, VOTED[iii].name) > 0) {
+                tmp = VOTED[ii];
+                VOTED[ii] = VOTED[iii];
+                VOTED[iii] = tmp;
             }
         }
     }
-    while(order < j) {
-        if (f_strcmp(STUDENTS[order].name, STUDENTS[order + 1].name) == 0)
+    while(voted_ < j) {
+        if (f_strcmp(VOTED[voted_].name, STUDENTS[students_].name) == 0) {
             called ++;
-        else {
-            printf("%s %d\n", STUDENTS[order].name, called);
-            called = 1;
+        } else {
+            printf("%s %d\n", STUDENTS[students_].name, called);
+            called = 0;
+            students_ ++;
         }
-        order ++;
+        voted_ ++;
     }
 }
