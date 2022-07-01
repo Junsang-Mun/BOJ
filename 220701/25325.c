@@ -56,7 +56,7 @@ int main(void) {
         }
     }
     for (int i = 0; i < j; i ++) {
-        for (int ii = 0; ii > j - 1; ii ++) {
+        for (int ii = 0; ii < j - 1; ii ++) {
             if (STUDENTS[ii].voted < STUDENTS[ii + 1].voted) {
                 r_tmp = STUDENTS[ii];
                 STUDENTS[ii] = STUDENTS[ii + 1];
@@ -64,7 +64,7 @@ int main(void) {
             }
         }
     }
-    for (int i = 0; i < j; i ++) {
+    for (int i = 0; i < numberOfStudents; i ++) {
         printf("%s %d\n", STUDENTS[i].name, STUDENTS[i].voted);
     }
 }
