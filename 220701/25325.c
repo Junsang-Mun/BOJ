@@ -31,12 +31,12 @@ int main(void) {
     while (scanf("%s", VOTED[j].name) != EOF) {
         j ++;
     }
-    for (int ii = 1; ii <= j; ii ++) {
-        for (int iii = ii + 1; iii < j; iii ++) {
-            if (f_strcmp(VOTED[ii].name, VOTED[iii].name) > 0) {
-                tmp = VOTED[ii];
-                VOTED[ii] = VOTED[iii];
-                VOTED[iii] = tmp;
+    for (int ii = j - 1; ii > 0; ii --) {
+        for (int iii = 0; iii < ii; iii ++) {
+            if (f_strcmp(VOTED[iii].name, VOTED[iii + 1].name) > 0) {
+                tmp = VOTED[iii];
+                VOTED[iii] = VOTED[iii + 1];
+                VOTED[iii + 1] = tmp;
             }
         }
     }
