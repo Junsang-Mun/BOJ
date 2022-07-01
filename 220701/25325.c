@@ -35,9 +35,11 @@ int main(void) {
     }
     while(order < numberOfStudents) {
         if (STUDENTS[order].name == STUDENTS[order + 1].name) {
-            called ++; 
+            called ++;
+            order ++; 
         } else {
-            printf("%c %d", STUDENTS[order].name, called);
+            printf("%s %d\n", STUDENTS[order].name, called);
+            order ++;
         }
         order ++;
     }
