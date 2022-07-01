@@ -7,7 +7,7 @@ int main(void) {
     scanf("%d", &inputNum);
     while (prevNum <= inputNum && inputNum >= nextNum) {
         prevNum = nextNum;
-        nextNum = nextNum + (SPACE * multi);
+        nextNum = nextNum + (SPACE * multi) + 1;
         multi ++;
     }
     printf("%d", multi);
