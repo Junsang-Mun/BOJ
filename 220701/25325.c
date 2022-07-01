@@ -47,11 +47,11 @@ int main(void) {
     while(students_ < numberOfStudents) {
         if (f_strcmp(VOTED[voted_].name, STUDENTS[students_].name) == 0) {
             called ++;
+            voted_ ++;
         } else {
             STUDENTS[students_].voted = called;
             students_ ++;
             called = 0;
         }
-        voted_ ++;
     }
 }
