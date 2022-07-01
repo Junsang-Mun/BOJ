@@ -23,6 +23,8 @@ void mergeSort(char arr[], int left, int right) {
 
 int main(void) {
     int numberOfStudents;
+    int order = 0;
+    int called = 0;
 
     scanf("%d", &numberOfStudents);
     char vote[numberOfStudents];
@@ -30,4 +32,12 @@ int main(void) {
         scanf("%s", &vote[i]);
     }
     mergeSort(vote, 0, numberOfStudents - 1);
+    while(order < numberOfStudents) {
+        if (vote[order] == vote[order + 1]) {
+            called ++; 
+        } else {
+            printf("%c %d", vote[order], called);
+        }
+        order ++;
+    }
 }
