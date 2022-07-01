@@ -4,19 +4,20 @@ typedef struct vote {
     char name[11];
 }vote;
 
-int f_strcmp(const char *s1, const char *s2) {
-    int i = 0;
-
-    while (s1[i] == s2[i] && s1[i] && s2[i]) {
-        i ++;
-    }
-    return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+int f_strcmp(char *str1, char *str2)
+{
+	while (*str1 && *str2 && *str1 == *str2){
+  		str1++;
+  		str2++;
+  }
+	return (*str1 - *str2);
 }
 
 int main(void) {
     int numberOfStudents;
     int order = 0;
     int called = 1;
+    int j = 0;
 
     scanf("%d", &numberOfStudents);
     vote STUDENTS[numberOfStudents];
@@ -24,8 +25,11 @@ int main(void) {
     for (int i = 1; i <= numberOfStudents; i ++) {
         scanf("%s", STUDENTS[i].name);
     }
-    for (int ii = 1; ii <= numberOfStudents; ii ++) {
-        for (int iii = ii + 1; iii < numberOfStudents; iii ++) {
+    while (scanf("%s", STUDENTS[j].name) != EOF) {
+        j ++;
+    }
+    for (int ii = 1; ii <= j; ii ++) {
+        for (int iii = ii + 1; iii < j; iii ++) {
             if (f_strcmp(STUDENTS[ii].name, STUDENTS[iii].name) > 0) {
                 tmp = STUDENTS[ii];
                 STUDENTS[ii] = STUDENTS[iii];
@@ -33,14 +37,13 @@ int main(void) {
             }
         }
     }
-    while(order != numberOfStudents) {
-        if (STUDENTS[order].name == STUDENTS[order + 1].name) {
+    while(order < j) {
+        if (f_strcmp(STUDENTS[order].name, STUDENTS[order + 1].name) == 0)
             called ++;
-            order ++; 
-        } else {
+        else {
             printf("%s %d\n", STUDENTS[order].name, called);
             called = 1;
-            order ++;
         }
+        order ++;
     }
 }
