@@ -16,15 +16,15 @@ int f_strcmp(const char *s1, const char *s2) {
 int main(void) {
     int numberOfStudents;
     int order = 0;
-    int called = 0;
+    int called = 1;
 
     scanf("%d", &numberOfStudents);
     vote STUDENTS[numberOfStudents];
     vote tmp;
-    for (int i = 0; i <= numberOfStudents - 1; i ++) {
-        scanf("%s", &STUDENTS[i].name);
+    for (int i = 1; i <= numberOfStudents; i ++) {
+        scanf("%s", STUDENTS[i].name);
     }
-    for (int ii = 0; ii <= numberOfStudents - 1; ii ++) {
+    for (int ii = 1; ii <= numberOfStudents; ii ++) {
         for (int iii = ii + 1; iii < numberOfStudents; iii ++) {
             if (f_strcmp(STUDENTS[ii].name, STUDENTS[iii].name) > 0) {
                 tmp = STUDENTS[ii];
@@ -33,14 +33,14 @@ int main(void) {
             }
         }
     }
-    while(order < numberOfStudents) {
+    while(order != numberOfStudents) {
         if (STUDENTS[order].name == STUDENTS[order + 1].name) {
             called ++;
             order ++; 
         } else {
             printf("%s %d\n", STUDENTS[order].name, called);
+            called = 1;
             order ++;
         }
-        order ++;
     }
 }
