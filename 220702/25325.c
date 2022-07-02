@@ -66,7 +66,8 @@ int main(void) {
             }
         }
     }
-    for (int i = 0; i < numberOfStudents; i ++) {
+    for (int i = 0; i < numberOfStudents - 1; i ++) {
         printf("%s %d\n", STUDENTS[i].name, STUDENTS[i].voted);
     }
+    printf("%s %d", STUDENTS[numberOfStudents - 1].name, STUDENTS[numberOfStudents - 1].voted);
 }
