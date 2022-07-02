@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 typedef struct vote {
     char name[11];
@@ -8,14 +9,6 @@ typedef struct result {
     char name[11];
     int voted;
 }result;
-
-int f_strcmp(char *str1, char *str2) {
-	while (*str1 && *str2 && *str1 == *str2){
-  		str1++;
-  		str2++;
-    }
-	return (*str1 - *str2);
-}
 
 int main(void) {
     int numberOfStudents;
@@ -33,12 +26,21 @@ int main(void) {
     for (int i = 0; i < numberOfStudents; i ++) {
         scanf("%s", STUDENTS[i].name);
     }
+    for (int i = 0; i < numberOfStudents; i ++) {
+        for (int ii = 0; ii < numberOfStudents - 1; ii ++) {
+            if (strcmp(STUDENTS[ii].name, STUDENTS[ii + 1].name) > 0) {
+                r_tmp = STUDENTS[ii];
+                STUDENTS[ii] = STUDENTS[ii + 1];
+                STUDENTS[ii + 1] = r_tmp;
+            }
+        }
+    }
     while (scanf("%s", VOTED[j].name) != EOF) {
         j ++;
     }
     for (int i = 0; i < j; i ++) {
         for (int ii = 0; ii < j - 1; ii ++) {
-            if (f_strcmp(VOTED[ii].name, VOTED[ii + 1].name) > 0) {
+            if (strcmp(VOTED[ii].name, VOTED[ii + 1].name) > 0) {
                 v_tmp = VOTED[ii];
                 VOTED[ii] = VOTED[ii + 1];
                 VOTED[ii + 1] = v_tmp;
@@ -46,7 +48,7 @@ int main(void) {
         }
     }
     while(students_ < numberOfStudents) {
-        if (f_strcmp(VOTED[voted_].name, STUDENTS[students_].name) == 0) {
+        if (strcmp(VOTED[voted_].name, STUDENTS[students_].name) == 0) {
             called ++;
             voted_ ++;
         } else {
@@ -64,8 +66,7 @@ int main(void) {
             }
         }
     }
-    for (int i = 0; i < numberOfStudents - 1; i ++) {
+    for (int i = 0; i < numberOfStudents; i ++) {
         printf("%s %d\n", STUDENTS[i].name, STUDENTS[i].voted);
     }
-        printf("%s %d", STUDENTS[numberOfStudents - 1].name, STUDENTS[numberOfStudents - 1].voted);
 }
