@@ -2,6 +2,7 @@
 
 int main(void) {
     int weight;
+    int weightCopy;
     int carry;
     int i;
 
@@ -9,21 +10,22 @@ int main(void) {
     scanf("%d", &weight);
     if (weight % 5 == 0) {
         carry = weight / 5;
-    } else if (weight % 3 == 0) {
-        carry = weight / 3;
     } else {
-        while (1) {
-            weight -= 5;
+        weightCopy = weight;
+        while (weightCopy > 0) {
+            weightCopy -= 5;
             i ++;
-            if ((weight != 0) && (weight % 3 == 0)) {
+            if ((weightCopy != 0) && (weightCopy % 3 == 0)) {
                 carry = i;
-                carry += weight / 3;
+                carry += weightCopy / 3;
+                weight = -10000;
                 break ;
             }
-            if (weight <= 0) {
-                carry = -1;
-                break ;
-            }
+        }
+        if ((weight > 0) && (weight % 3 == 0)) {
+            carry = weight / 3;
+        } else if (weight > 0) {
+            carry = -1;
         }
     }
     printf("%d", carry);
