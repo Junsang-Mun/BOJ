@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int factorial(int num) {
-    int result = 1;
+    long result = 1;
     for (int i = 1; i <= num; i ++) {
         result *= i;
     }
@@ -9,5 +9,13 @@ int factorial(int num) {
 }
 
 int main(void) {
-    printf("%d", factorial(6));
+    int testcase, westSite, eastSite, i = 0;
+
+    scanf("%d", &testcase);
+    //while (i <= testcase) {
+        scanf("%d %d", &westSite, &eastSite);
+        printf("%d", factorial(eastSite) / (factorial(westSite) * factorial(eastSite - westSite)));
+        i ++;
+    //}
+    return 0;
 }
