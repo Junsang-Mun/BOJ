@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-int factorial(int num) {
-    long result = 1;
+unsigned long long factorial(int num) {
+    unsigned long long result = 1;
     for (int i = 1; i <= num; i ++) {
         result *= i;
     }
@@ -14,7 +14,7 @@ int main(void) {
     scanf("%d", &testcase);
     //while (i <= testcase) {
         scanf("%d %d", &westSite, &eastSite);
-        printf("%d", factorial(eastSite) / (factorial(westSite) * factorial(eastSite - westSite)));
+        printf("%llu", factorial(eastSite) / (factorial(westSite) * factorial(eastSite - westSite)));
         i ++;
     //}
     return 0;
