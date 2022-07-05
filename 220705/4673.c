@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int selfNumber (int c) {
+int notSelfNumber (int c) {
     int cc = c;
     while (c != 0) {
         cc += c % 10;
@@ -10,5 +10,10 @@ int selfNumber (int c) {
 }
 
 int main (void) {
-    printf("%d", selfNumber(39));
+    int arr [10001];
+    int i = 1;
+    
+    while (i <= 10000) {
+        //arr;
+    }
 }
