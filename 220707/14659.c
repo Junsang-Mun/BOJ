@@ -13,11 +13,14 @@ int main(void) {
     i = 0;
     while(i < hanzo) {
         if (mt[i] >= highest) {
-            slain_tmp = i - index;
+            highest = mt[i];
+            slain_tmp = i - index - 1;
             index = i;
         }
         if (slain_tmp > slain) {
             slain = slain_tmp;
         }
+        i ++;
     }
+    printf("%d", slain);
 }
