@@ -42,9 +42,7 @@ int main(void) {
     quick_sort(waiting, 0, people - 1);
     i = 0;
     while (i < people) {
-        for (int j = 0; j <= i; j ++) {
-            result += waiting[i];
-        }
+        result += waiting[i] * (people - i);
         i ++;
     }
     printf("%d", result);
