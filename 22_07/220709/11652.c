@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-void quick_sort(int *data, int start, int end){
-    int pivot = start;
-    int i = pivot + 1;
-    int j = end;
-    int temp;
+void quick_sort(long long *data, long long start, long long end){
+    long long pivot = start;
+    long long i = pivot + 1;
+    long long j = end;
+    long long temp;
 
     if (start >= end){
         return; 
@@ -31,13 +31,13 @@ void quick_sort(int *data, int start, int end){
 }
 
 int main(void) {
-    int arrlen, i = 0, count = 1, maxi = 0;
+    long long arrlen, i = 0, count = 1, maxi = 0, flag;
 
-    scanf("%d", &arrlen);
-    int arr[arrlen];
+    scanf("%lld", &arrlen);
+    long long arr[arrlen];
 
-    for (int a = 0; a < arrlen; a ++) {
-        scanf("%d", &arrlen);
+    for (long long a = 0; a < arrlen; a ++) {
+        scanf("%lld", &arr[a]);
         i ++;
     }
     i = 0;
@@ -47,12 +47,13 @@ int main(void) {
             count ++;
             if (count > maxi) {
                 maxi = count;
+                flag = i;
             }
         } else {
             count = 1;
         }
         i ++;
     }
-    printf("%d", maxi);
+    printf("%lld", arr[flag]);
     return 0;
 }
