@@ -2,12 +2,14 @@
 #include <math.h>
 
 int main(void) {
-    int n_case, x, y, res;
+    int n_case, x, y;
+    int res;
 
     scanf("%d", &n_case);
     for (int i = 0; i < n_case; i ++) {
         scanf("%d %d", &x, &y);
-        res = (int)pow((double) x, (double) y);
-        printf("%d", res % 10);
+        for (int ii = 0; ii < n_case; ii ++) {
+            
+        }
     }
 }
