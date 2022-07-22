@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int isPegion(int v) {
+int isPigeon(int v) {
     if (v == 9999)
         return 1;
     else
@@ -14,12 +14,12 @@ int main(void) {
     while (i < tcn) {
         scanf("%d %d", &run, &bread);
         if (run <= bread) {
-            if (min > run)
+            if (min > bread)
                 min = bread;
         }
         i ++;
     }
-    if (isPegion(min))
+    if (isPigeon(min))
         min = -1;
     printf("%d", min);
     return 0;
