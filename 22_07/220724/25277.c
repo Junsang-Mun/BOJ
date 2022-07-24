@@ -18,13 +18,14 @@ int fuck(char ch) {
 }
 
 int main (void) {
+    char *he = "he", *she = "she", *him = "him", *her = "her";
     int num, i = 0, tlqkf = 0;
 
     scanf("%d", &num);
     while (i < num) {
-        char ch;
-        scanf("%s", &ch);
-        if (strcmp(&ch, "he") == 0 || strcmp(&ch, "she") == 0 || strcmp(&ch, "him") == 0 || strcmp(&ch, "her") == 0)
+        char *ch;
+        scanf("%s", ch);
+        if (strcmp(ch, he) == 0 || strcmp(ch, she) == 0 || strcmp(ch, him) == 0 || strcmp(ch, her) == 0)
             tlqkf ++;
         i ++;
     }
