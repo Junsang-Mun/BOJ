@@ -1,20 +1,25 @@
 #include <stdio.h>
 
 int main(void) {
-    int n, q, rpt, l, ll, res = 0;
+    int n, q, res = 0, tlqkf = 0;
 
     scanf("%d %d", &n, &q);
-    char arr[10000] = {'.', };
-
+    int arr[n + 2];
+    while (arr[tlqkf]) {
+        arr[tlqkf] = 0;
+        tlqkf ++;
+    }
     for (int i = 0; i < q; i ++) {
-        scanf("%d %d", &l, &ll);
-        for (int aa = 0; aa < q; aa ++) {
-            for (int a = l; i < n; a += ll)
-                arr[a] = 'B';
+        int l, k;
+        
+        scanf("%d %d", &l, &k);
+        for (int ii = l; ii <= n; ii += k) {
+            arr[ii] = 1;
         }
     }
-    for (int i = 0; i < n; i ++) {
-        res += arr[i] == '.' ? 1 : 0;
+    for (int i = 1; i <= n; i ++) {
+        if (arr[i] == 0)
+            res ++;
     }
     printf("%d", res);
 }
