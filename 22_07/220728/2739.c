@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 int main(void) {
-    int n, i = 2;
+    int n, i = 1;
 
     scanf("%d", &n);
     while(i < 10) {
-        printf("%d * %d = %d", n, i, n * i);
+        printf("%d * %d = %d\n", n, i, n * i);
         i ++;
     }
 }
