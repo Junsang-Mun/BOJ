@@ -4,9 +4,7 @@ int main(void) {
     int n, i = 0, a, b;
     
     scanf("%d", &n);
-    while (i < n) {
-        scanf("%d %d", &a, &b);
+    while (scanf("%d %d", &a, &b) != EOF) {
         printf("%d", a + b);
-        n ++;
     }
 }
