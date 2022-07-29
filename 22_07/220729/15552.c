@@ -5,6 +5,6 @@ int main(void) {
     
     scanf("%d", &n);
     while (scanf("%d %d", &a, &b) != EOF) {
-        printf("%d", a + b);
+        printf("%d\n", a + b);
     }
 }
