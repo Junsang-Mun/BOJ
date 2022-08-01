@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int c(int n) {
-	int a = (n / 10) + (n % 10 * 10);
+	int a = (n / 10 * 10) + (n % 10);
 	return n;
 }
 
