@@ -9,9 +9,12 @@ int main(void) {
 	int num, changed, i = 0;
 
 	scanf("%d", &num);
-	do {
-	changed = c(num);
-	i ++;
-	} while (changed == num);
+	while (1) {
+		i ++;
+		changed = c(num);
+		if (changed == num) {
+			break;
+		}
+	}
 	printf("%d", i);
 }
