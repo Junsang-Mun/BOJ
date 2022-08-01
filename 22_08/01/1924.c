@@ -10,5 +10,6 @@ int main(void) {
 		md += monthArray[i];
 	}
 	day += md;
-	printf("%s", dayArray[(day % 7) - 1]);
+	md = day % 7 - 1;
+	printf("%s", dayArray[md]);
 }
