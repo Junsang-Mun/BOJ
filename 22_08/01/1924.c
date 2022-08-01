@@ -11,5 +11,7 @@ int main(void) {
 	}
 	day += md;
 	md = day % 7 - 1;
+	if (md == -1)
+		md = 6;
 	printf("%s", dayArray[md]);
 }
