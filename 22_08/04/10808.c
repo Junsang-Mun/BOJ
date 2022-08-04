@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(void) {
-	char a[101];
+	char a[101] ={0, };
 	int b[27] = {0, };
 	scanf("%s", a);
 	for (int i = 0; i < 101; i ++) {
