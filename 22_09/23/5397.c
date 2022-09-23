@@ -34,6 +34,7 @@ int main(void) {
                     break;
                 }
                 case '-': {
+                    idx_tmp --;
                     str_boom(result, idx_tmp);
                     break;
                 }
