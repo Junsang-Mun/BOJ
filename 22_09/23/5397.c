@@ -39,7 +39,7 @@ int main(void) {
                     break;
                 }
                 default: {
-                    str_join(result, idx_tmp, ch[idx]);
+                    str_join(result, idx_tmp, ch[idx_tmp]);
                     idx_tmp ++;
                     break;
                 }
