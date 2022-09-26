@@ -1,13 +1,15 @@
 #include <stdio.h>
 
 int main(void) {
-	int a, max = 0, min = __INT_MAX__;
-	scanf("%d", &a);
-	while (scanf("%d", &a) != EOF) {
-		if (max < a)
-			max = a;
-		if (min > a)
-			min = a;
+	int curr, next;
+	int max = 0, min = __INT_MAX__;
+	scanf ("%d", &curr);
+	while (scanf("%d", &next) != -1) {
+		if (curr < next && max < next)
+			max = next;
+		if (curr > next && min > next)
+			min = next;
+		curr = next;
 	}
-	printf("%d %d %d",max,min, max - min);
+	printf("min: %d | max: %d | max-min: %d", min, max, max-min);
 }
