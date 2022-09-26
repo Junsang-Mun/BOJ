@@ -7,9 +7,10 @@ int main(void) {
 	while (scanf("%d", &next) != -1) {
 		if (curr < next)
 			max = next;
-		if (curr > next)
+		else if (curr > next)
 			min = next;
-		curr = next;
+		else
+			curr = next;
 	}
 	if (max == 0)
 		printf("0");
