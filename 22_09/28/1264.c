@@ -17,7 +17,7 @@ int main(void) {
 		if (c == '#')
 			break;
 		else if (c == '\n') {
-			printf("%d", count);
+			printf("%d\n", count);
 			count = 0;
 		}
 		else if (match(c))
