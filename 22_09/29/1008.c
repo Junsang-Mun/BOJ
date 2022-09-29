@@ -13,18 +13,23 @@ void __PDIGIT(int n) {
 	}
 }
 
-void fprint(float n) {
+void lfprint(double n) {
 	__PDIGIT((int)n);
 	__PUTCHAR('.');
+	int TO_REMOVE = (int)n;
+	n = n - TO_REMOVE;
 	for (int i = 0; i < 9; i ++) {
 		n *= 10;
+		TO_REMOVE = (int)n;
+		__PUTCHAR((int)n + '0');
+		n = n - TO_REMOVE;
 	}
 }
 
 int main(void) {
 	int a = 0, b = 0, pn = 1;
-	float result;
-	char tmp = 0, result_array[100001] = {0, };
+	double result;
+	char tmp = 0;
 
 	while (1) {
 		read(0, &tmp, 1);
@@ -47,7 +52,7 @@ int main(void) {
 			b = ((b * 10) + (tmp - '0')) * pn;
 		}
 	}
-	result = (float)a / (float)b;
-	fprint(result);
+	result = (double)a / (double)b;
+	lfprint(result);
 	return 0;
 }
