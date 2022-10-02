@@ -1,19 +1,25 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-int cmp(const void *a, const void *b) {
-	return (*(int *)a - *(int *)b);
+void clear(short *a) {
+	for (short i = 0; i < 10000; i ++) {
+		a[i] = -1;
+	}
 }
 
 int main(void) {
 	int n;
 	scanf("%d", &n);
-	int arr[n];
-
-	for (int i = 0; i < n; i ++)
-		scanf("%d", &arr[i]);
-	qsort(arr, n, sizeof(int), cmp);
+	short arr[10000], tmp;
 	for(int i = 0; i < n; i ++) {
-		printf("%d", arr[i]);
+		scanf("%hd", &tmp);
+		arr[tmp - 1] ++;
+	}
+	for(int i = 0; i < n; i ++) {
+		if (arr[i] == -1) {
+			continue;
+		}
+		for (short ii = 1; ii <= arr[i] + 1; ii ++){
+			printf("%d\n", i);
+		}
 	}
 }
