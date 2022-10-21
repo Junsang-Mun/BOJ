@@ -14,11 +14,11 @@ int main(void) {
 		time_min -= 60;
 		time_hr ++;
 	}
-	printf("time_: %d %d %d\n", time_hr, time_min, time_sec);
+	//printf("time_: %d %d %d\n", time_hr, time_min, time_sec);
 	hr += time_hr;
 	min += time_min;
 	sec += time_sec;
-	printf("-: %d %d %d\n", hr, min, sec);
+	//printf("-: %d %d %d\n", hr, min, sec);
 	while (sec >= 60) {
 		sec -= 60;
 		min ++;
