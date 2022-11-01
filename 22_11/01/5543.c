@@ -10,6 +10,7 @@ int min(int a, int b, int c) {
 	if (c < b && c < a) {
 		return c;
 	}
+	return 0;
 }
 
 int main(void) {
