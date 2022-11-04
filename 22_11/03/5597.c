@@ -11,4 +11,4 @@ int main(void) {
 		if (arr[i] == 0)
 			printf("%d\n", i + 1);
 	}
-}
+} 
