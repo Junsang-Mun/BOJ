@@ -22,7 +22,7 @@ int validate(char *ch) {
  * @brief a print function
  * 
  * @param ch a set of characters or a single character pointer
- * @param flag 1: single char, 2: string, 3: reverse string
+ * @param flag 1: single char, 2: string, 3: reverse string, 4: print newline
  * @param idx starting index when uses with flag 3; else MUST set to -1
  */
 void print(char *ch, int flag, int idx) {
