@@ -8,7 +8,7 @@ int scan(char *ch) {
 		ch[i] = buf;
 		i ++;
 	}
-	return i;
+	return i - 1;
 }
 
 int validate(char *ch) {
