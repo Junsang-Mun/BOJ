@@ -18,7 +18,6 @@ void strrev(char *ch) {
 		ch[i] = ch[j];
 		ch[j] = a;
 	}
-
 }
 
 int main(void) {
