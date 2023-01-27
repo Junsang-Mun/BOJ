@@ -1,19 +1,20 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int abs(int n)
+void printAnswer(int *q_arr)
 {
-	return (n < 0 ? -n : n);
+	printf("%d %d %d %d\n", q_arr[0], q_arr[1], q_arr[2], q_arr[3]);
 }
 
 int isQueenSafe(int *q_arr, int row, int col)
 {
 	int	i = 0;
 
-	while (i <= row)
+	if (row == 0)
+		return 1;
+	while (i < col)
 	{
-		if (q_arr[i] == col)
-			return 0;
-		if (abs(q_arr[row - i] - col) == abs(row - i))
+		if (q_arr[i] == q_arr[col] || abs(q_arr[i] - q_arr[col]) == abs(i - col))
 			return 0;
 		i++;
 	}
@@ -22,27 +23,33 @@ int isQueenSafe(int *q_arr, int row, int col)
 
 void findQueen(int *q_arr, int row)
 {
-	int	i = 0;
-	int	flag = 0;
+	int	col = 0;
 
-	while (i < 3)
+	if (row >= 4)
 	{
-		if (isQueenSafe(q_arr, row, i))
-			{
-				q_arr[row] = i;
-				flag = 1;
-			}
-		i++;
-	}
-	if (flag == 0)
+		printAnswer(q_arr);
 		return ;
-	findQueen(q_arr, row + 1);
+	}
+	while (col < 4)
+	{
+		if (isQueenSafe(q_arr, row, col))
+		{
+			q_arr[row] = col;
+			findQueen(q_arr, row + 1);
+		}
+		else
+			col++;
+	}
+	if (col >= 4)
+	{
+		printf("Error! No Answer");
+	}
 }
 
 int main(void)
 {
-	int	q_arr[4] = {0, };
+	int	q_arr[4];
 
 	findQueen(q_arr, 0);
-	printf("%d %d %d %d\n", q_arr[0], q_arr[1], q_arr[2], q_arr[3]);
+	return (0);
 }
